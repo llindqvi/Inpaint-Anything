@@ -1,5 +1,5 @@
 import torch
-from kornia import SamplePadding
+# SamplePadding removed in kornia 0.8.1; use string values for padding_mode
 from kornia.augmentation import RandomAffine, CenterCrop
 
 
@@ -7,12 +7,12 @@ class FakeFakesGenerator:
     def __init__(self, aug_proba=0.5, img_aug_degree=30, img_aug_translate=0.2):
         self.grad_aug = RandomAffine(degrees=360,
                                      translate=0.2,
-                                     padding_mode=SamplePadding.REFLECTION,
+                                     padding_mode="reflect",
                                      keepdim=False,
                                      p=1)
         self.img_aug = RandomAffine(degrees=img_aug_degree,
                                     translate=img_aug_translate,
-                                    padding_mode=SamplePadding.REFLECTION,
+                                    padding_mode="reflect",
                                     keepdim=True,
                                     p=1)
         self.aug_proba = aug_proba
