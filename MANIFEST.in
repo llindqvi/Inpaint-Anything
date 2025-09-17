@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+recursive-include inpaint_anything *
+recursive-include utils *
+recursive-include configs *
+recursive-include weights *.pt
+recursive-include lama *.yaml
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

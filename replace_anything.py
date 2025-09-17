@@ -62,7 +62,7 @@ def setup_args(parser):
 
 
 
-if __name__ == "__main__":
+def main():
     """Example usage:
     python replace_anything.py \
         --input_img ./example/replace-anything/dog.png \
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     """
     parser = argparse.ArgumentParser()
     setup_args(parser)
-    args = parser.parse_args(sys.argv[1:])
+    args = parser.parse_args()
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     if args.coords_type == "click":
@@ -134,3 +134,7 @@ if __name__ == "__main__":
         img_replaced = replace_img_with_sd(
             img, mask, args.text_prompt, device=device)
         save_array_to_img(img_replaced, img_replaced_p)
+
+
+if __name__ == "__main__":
+    main()

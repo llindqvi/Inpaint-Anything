@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inpaint-anything"
+version = "0.1.0"
+description = "Inpaint Anything: Segment Anything Meets Image Inpainting"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Tao Yu"},
+    {name = "Runseng Feng"}, 
+    {name = "Ruoyu Feng"},
+    {name = "Jinming Liu"},
+    {name = "Xin Jin"},
+    {name = "Wenjun Zeng"},
+    {name = "Zhibo Chen"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.7"
+
+[project.urls]
+Homepage = "https://github.com/llindqvi/Inpaint-Anything"
+Repository = "https://github.com/llindqvi/Inpaint-Anything"
+
+[project.scripts]
+inpaint-remove = "remove_anything:main"
+inpaint-fill = "fill_anything:main"
+inpaint-replace = "replace_anything:main"
+
+[tool.setuptools]
+packages = ["inpaint_anything", "utils"]

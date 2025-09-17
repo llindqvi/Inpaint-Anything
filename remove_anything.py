@@ -58,7 +58,7 @@ def setup_args(parser):
     )
 
 
-if __name__ == "__main__":
+def main():
     """Example usage:
     python remove_anything.py \
         --input_img FA_demo/FA1_dog.png \
@@ -74,7 +74,7 @@ if __name__ == "__main__":
     """
     parser = argparse.ArgumentParser()
     setup_args(parser)
-    args = parser.parse_args(sys.argv[1:])
+    args = parser.parse_args()
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
     if args.coords_type == "click":
@@ -130,3 +130,7 @@ if __name__ == "__main__":
         img_inpainted = inpaint_img_with_lama(
             img, mask, args.lama_config, args.lama_ckpt, device=device)
         save_array_to_img(img_inpainted, img_inpainted_p)
+
+
+if __name__ == "__main__":
+    main()

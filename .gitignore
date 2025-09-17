@@ -18,4 +18,8 @@ pretrained_models/big-lama
 
 results/*
 
+build/*
+*.whl
+*.egg-info
+
 
